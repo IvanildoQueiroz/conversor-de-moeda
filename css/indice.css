@@ -112,7 +112,7 @@ header a {
   background: rgba(187, 25, 25, 0);
   border: none;
   cursor: pointer;
-
+  outline: none;
   &:hover {
     color: #46a54d;
   }
@@ -137,4 +137,59 @@ main {
   width: 100%;
   height: 100%;
   padding-top: 79px;
+}
+
+body :where(.page1){
+  height: 100%;
+  padding-top:20px ; 
+}
+.page1 :where(article , #find-first-data,#find-second-data,.message){
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page1 :where(h1,h2,h3){
+  color: var(--blue-default);
+  font: bolder 20px "Montserrat" , sans-serif;
+}
+.page1 input,select{
+  width:max(160px,40%);
+  height: 50px;
+  border-radius: 25px;
+  outline: none;
+  border: 1px solid rgb(190, 190, 190);
+}
+.page1 >article>input{
+  width:max(360px,
+  25%);
+}
+.page1 select{
+  width:max(100px,5%);
+}
+.page1 a{
+  font-size: 18px;
+}
+#find-first-data,#find-second-data{
+  width: max(260px,25%);
+  margin:20px 0 ;
+  flex-direction:  row;
+  justify-content: center;
+  gap: 10px;
+}
+.message > p{
+  text-align:center;
+  color: orangered;
+  font: bolder 25px "Montserrat", sans-serif;
+}
+#btn-message{
+  margin: 30px 0;
+  width: 250px;
+  height:50px;
+  background-color: orangered;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font:300 19px  helvetica;
 }

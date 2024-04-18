@@ -23,7 +23,7 @@ controls.forEach((control) => {
       items[currentItem].scrollIntoView({
         behavior: "smooth",
         inline: "center",
-        
+        block:'nearest'
       });
       items[currentItem].classList.add("current-item");
     });
