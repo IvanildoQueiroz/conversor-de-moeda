@@ -24,6 +24,10 @@ header {
   background-color: #fff;
   flex-grow: 1;
 }
+header a{
+  text-decoration: none;
+  color: var(--green-defaul-dark);
+}
 .contain-fixed {
   height: 100%;
   width: 100%;
@@ -39,7 +43,7 @@ header {
   justify-content: space-between;
   gap: 8em;
   box-shadow: 0px 0px 10px black;
-  color: var(--green-defaul-dark);
+  
 }
 .navBar {
   display: flex;
