@@ -100,7 +100,22 @@ header a {
   opacity: 1;
   filter: saturate(1);
 }
+.slick-dot{
+  margin: 20px auto;
+  width: 680px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.slick-dot li{
+  width:1px;
+  cursor: pointer;
+}
+.slick-dot li::marker{
+color: #46a54d;
+font-size: 25px;
 
+}
 .arrow-left,
 .arrow-right {
   font: bolder 45px helvetica;

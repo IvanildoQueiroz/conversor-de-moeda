@@ -1,4 +1,5 @@
 const controls = document.querySelectorAll(`.control`);
+const slickDots = document.querySelectorAll('.slick-dot-item')
 let currentItem = 0;
 const items = document.querySelectorAll(".item");
 const maxItems = items.length;
@@ -28,6 +29,11 @@ controls.forEach((control) => {
       items[currentItem].classList.add("current-item");
     });
   });
+  slickDots.forEach((item)=>{
+    item.parentElement.addEventListener('click',(e)=>{
+      console.log(e)
+    })
+  })
   let newItems = [];
   items.forEach((item) => {
     newItems.push(item);
