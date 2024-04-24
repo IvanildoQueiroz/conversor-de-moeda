@@ -432,6 +432,7 @@ fieldset article p span:nth-child(2){
   align-items: center;
 }
 .page4 img{
+  margin-top: 20px;
   width: 100%;
 }
 .page4 fieldset{
@@ -451,7 +452,7 @@ fieldset article p span:nth-child(2){
   justify-content: space-around;
   
 }
-.page4 .imagesHelp img{
+age4 .imagesHelp img{
   width: 22vh;
   cursor: pointer;
   transition: all .7s  ease;
