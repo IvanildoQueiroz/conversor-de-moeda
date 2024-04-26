@@ -452,7 +452,7 @@ fieldset article p span:nth-child(2){
   justify-content: space-around;
   
 }
-age4 .imagesHelp img{
+.page4 .imagesHelp img{
   width: 22vh;
   cursor: pointer;
   transition: all .7s  ease;

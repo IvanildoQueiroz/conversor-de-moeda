@@ -101,7 +101,7 @@ header a {
   filter: saturate(1);
 }
 .slick-dot{
-  margin: 20px auto;
+  margin: 0px auto;
   width: 680px;
   display: flex;
   justify-content: center;
@@ -115,7 +115,7 @@ header a {
 .slick-dot li::before{
   content:".";
 color: #46a54d;
-font-size: 95px;
+font-size: 58px;
 
 }
 .arrow-left,
@@ -211,6 +211,7 @@ body :where(.page1){
   font:300 19px  helvetica;
 }
 .active::before{
-  color: white;
-  font: 200px;
+  height: 20px;
+  color: rgb(248, 10, 10);
+  font-size: 58px;
 }

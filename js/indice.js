@@ -48,8 +48,8 @@ controls.forEach((control) => {
 slickDots.forEach((dots,i)=>{
   dots.parentElement.addEventListener('click',(e)=>{
     currentItem = i;
-    e.target.classList.add('active')
-    console.log()
+    console.log(e.target)
+    e.target.classList.add('active');
     items.forEach((item) => {
       item.classList.remove("current-item");
       items[currentItem].scrollIntoView({
