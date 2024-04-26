@@ -106,14 +106,16 @@ header a {
   display: flex;
   justify-content: center;
   gap: 40px;
+  list-style-type: none;
 }
 .slick-dot li{
   width:1px;
   cursor: pointer;
 }
-.slick-dot li::marker{
+.slick-dot li::before{
+  content:".";
 color: #46a54d;
-font-size: 25px;
+font-size: 95px;
 
 }
 .arrow-left,
@@ -207,4 +209,8 @@ body :where(.page1){
   border: none;
   border-radius: 5px;
   font:300 19px  helvetica;
+}
+.active::before{
+  color: white;
+  font: 200px;
 }

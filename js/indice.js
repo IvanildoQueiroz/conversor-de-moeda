@@ -1,5 +1,5 @@
 const controls = document.querySelectorAll(`.control`);
-const slickDots = document.querySelectorAll('.slick-dot-item')
+const slickDots = document.querySelectorAll('.slick-dot-item');
 let currentItem = 0;
 const items = document.querySelectorAll(".item");
 const maxItems = items.length;
@@ -19,6 +19,7 @@ controls.forEach((control) => {
     if (currentItem < 0) {
       currentItem = maxItems - 1;
     }
+
     items.forEach((item) => {
       item.classList.remove("current-item");
       items[currentItem].scrollIntoView({
@@ -29,11 +30,7 @@ controls.forEach((control) => {
       items[currentItem].classList.add("current-item");
     });
   });
-  slickDots.forEach((item)=>{
-    item.parentElement.addEventListener('click',(e)=>{
-      console.log(e)
-    })
-  })
+  
   let newItems = [];
   items.forEach((item) => {
     newItems.push(item);
@@ -46,4 +43,21 @@ controls.forEach((control) => {
       e.target.parentElement.classList.add("current-item");
     });
   });
+});
+
+slickDots.forEach((dots,i)=>{
+  dots.parentElement.addEventListener('click',(e)=>{
+    currentItem = i;
+    e.target.classList.add('active')
+    console.log()
+    items.forEach((item) => {
+      item.classList.remove("current-item");
+      items[currentItem].scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block:'nearest'
+      });
+      items[currentItem].classList.add("current-item");
+    });
+  }) 
 });
