@@ -3,7 +3,19 @@ const slickDots = document.querySelectorAll('.slick-dot-item');
 let currentItem = 0;
 const items = document.querySelectorAll(".item");
 const maxItems = items.length;
-
+items.forEach(e=>{
+  
+  if(e.classList.contains('current-item')){
+    document.querySelectorAll('.indice-title').forEach(e=>{
+      e.innerHTML= items[currentItem].textContent;
+    })
+  };
+  e.addEventListener('click',()=>{
+    document.querySelectorAll('.indice-title').forEach(e=>{
+      e.innerHTML= items[currentItem].textContent;
+    })
+  })
+})
 controls.forEach((control) => {
   control.addEventListener("click", () => {
     const isLeft = control.classList.contains("arrow-left");
@@ -27,6 +39,9 @@ controls.forEach((control) => {
         inline: "center",
         block:'nearest'
       });
+      document.querySelectorAll('.indice-title').forEach(e=>{
+        e.innerHTML= items[currentItem].textContent;
+      })
       items[currentItem].classList.add("current-item");
     });
   });
@@ -47,8 +62,11 @@ controls.forEach((control) => {
 
 slickDots.forEach((dots,i)=>{
   dots.parentElement.addEventListener('click',(e)=>{
+    document.querySelectorAll('.indice-title').forEach(e=>{
+      e.innerHTML= items[currentItem].textContent;
+    })
     currentItem = i;
-    console.log(e.target)
+    console.log(e);
     e.target.classList.add('active');
     items.forEach((item) => {
       item.classList.remove("current-item");
