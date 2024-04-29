@@ -308,6 +308,12 @@ fieldset legend{
   padding-top: 20px;
 
 }
+canvas{
+  width:  100%;
+  margin: 10px 0px;
+  height: 80%;
+
+}
 fieldset article{
   text-align: center;
   margin: 10% auto;

@@ -86,10 +86,13 @@ function insertClass() {
 insertClass();
 
 function calcTimeStamp(x){
-  const date = new Date(x);
-  console.log(date.toLocaleString('pt-br', {timeZone: 'UTC',dateStyle:'short',timeStyle:'short'}));
+  let today = new Date(1714165120 *1000);
+  const date = new Date(x*1000);
+  today.setHours(today.getHours()-3)
+  console.log(today.toLocaleString('pt-br', {timeZone: 'UTC',dateStyle:'short'}));
+  return date.toLocaleString('pt-br', {timeZone: 'UTC',dateStyle:'short'})
 }
-calcTimeStamp(1538136540000)
+calcTimeStamp()
 
  function alterDataDescription(x,y){
   let calc = x/y;
@@ -98,3 +101,49 @@ calcTimeStamp(1538136540000)
   document.querySelector(`#panel4`).innerHTML=`${(calc*1000).toFixed(2)} reais`
   document.querySelector(`#panel5`).innerHTML=`${(calc*10000).toFixed(2)} reais`
  }
+// chart
+async function showChart(){
+  async function getSpecificPeriod(x,y){
+    let urlApi = `https://economia.awesomeapi.com.br/json/daily/USD-BRL/10?start_date=${x}&end_date=${y}`;
+    try{
+      
+      const res = await fetch(urlApi);
+      const data = await res.json();
+      // console.log(data)
+      return data
+
+    }catch(e){
+
+      console.log(e)
+      return null
+    }
+
+  }
+
+  //set initial data com 20240425 =  25/04/2024;
+  
+  const monthVariation = await getSpecificPeriod(20230102,20230123);
+  const ctx = document.getElementById('chart');
+  console.log(monthVariation)
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: monthVariation.map(i=>calcTimeStamp(i.timestamp)),
+      datasets: [{
+        label: 'high value',
+        data: monthVariation.map(i => i.high),
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: false
+        }
+      }
+    }
+  });
+}
+showChart();
+ 
