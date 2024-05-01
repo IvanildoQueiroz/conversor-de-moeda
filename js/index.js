@@ -174,7 +174,7 @@ async function showChart(coin) {
       responsive: true,
       plugins: {
         legend: {
-          position: "",
+          position: "top",
         },
         title: {
           display: true,
